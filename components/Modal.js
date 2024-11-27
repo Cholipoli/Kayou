@@ -147,7 +147,7 @@ const Modal = ({ isVisible, onClose, rocks }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
       <div className="bg-white w-11/12 md:w-1/3 p-5 rounded-lg shadow-lg">
-        <h2 className="text-lg font-bold mb-4 text-gray-800">J&apos;ai trouvé un kayou !</h2>
+        <h2 className="text-lg font-bold mb-4 text-gray-800">J'ai trouvé un kayou !</h2>
         <form onSubmit={handleSubmit}>
           {/* Rock Number Input */}
           <div className="mb-4">
