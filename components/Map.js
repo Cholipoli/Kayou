@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { returnRockPoints , returnRocks} from '../src/services/appwriteService';
 
 
+
 const MapComponent = () => {
   const [map, setMap] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -131,11 +132,12 @@ function isThePointLastOfThatIndex(pointIndex) {
                 }
               }
               else {
+                console.log(`url("/assets/images/rocks/rock${point.RockKey}.png")`)
                 if (point.Longitude !== undefined && point.Latitude !== undefined) {
                   const el = document.createElement('div');
-                  el.style.backgroundImage = 'url(https://cloud.appwrite.io/v1/storage/buckets/6734e5b6000644c227a6/files/673767a0003d143d192e/view?project=6734c8dd00362854da62&project=6734c8dd00362854da62)'; // Replace with your image path
-                  el.style.width = '32px'; // Customize width
-                  el.style.height = '32px'; // Customize height
+                  el.style.backgroundImage = `url("/assets/images/rocks/rock${point.RockKey}.png")`; // Replace with your image path
+                  el.style.width = '24px'; // Customize width
+                  el.style.height = '24px'; // Customize height
                   el.style.backgroundSize = 'cover'; // Make sure the image covers the element
                   new mapboxgl.Marker(el)
                     .setLngLat([point.Longitude, point.Latitude])
